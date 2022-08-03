@@ -313,8 +313,6 @@ def select_items():
         finish_items[2] = "Mejai's Soulstealer"
     if role == "support":
         finish_items[2] = support_item
-        if a == 22 and mode == "sr":
-            finish_items[3] = "Watchful Wardstone"
 
 
 def select_starting_items():
@@ -328,17 +326,11 @@ def select_starting_items():
             item = random.choice(items.support_items)
             starting_items.append(item)
             support_item = item
-            if x == 5:
-                starting_items.append("Control Ward")
-            else:
-                starting_items.append("Health Potion x2")
+            starting_items.append("Health Potion x2")
         elif role == "jungle":
             starting_items.append(random.choice(items.jungle_items))
-            if x == 5:
-                starting_items.append("Control Ward")
-                starting_items.append("Health Potion")
-            elif x == 10:
-                starting_items.append("Control Ward x2")
+            if x <= 10:
+                starting_items.append("Health Potion x3")
             else:
                 starting_items.append("Refillable Potion")
         else:
@@ -348,19 +340,13 @@ def select_starting_items():
                 a = random.choice(items.starting_items)
                 if a == "Dark Seal":
                     starting_items.append(a)
-                    if x == 5:
-                        starting_items.append("Control Ward")
-                        starting_items.append("Health Potion")
-                    elif x == 10:
-                        starting_items.append("Control Ward x2")
+                    if x <= 10:
+                        starting_items.append("Health Potion x2")
                     else:
                         starting_items.append("Refillable Potion")
                 elif a == "Tear of the Goddess" or a == "Doran's Ring":
                     starting_items.append(a)
-                    if x == 7:
-                        starting_items.append("Control Ward")
-                    else:
-                        starting_items.append("Health Potion x2")
+                    starting_items.append("Health Potion x2")
                 else:
                     starting_items.append(a)
                     starting_items.append("Health Potion")
