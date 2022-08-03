@@ -8,7 +8,6 @@ import summoner_spells
 import summoner_spells as sums
 
 # --- fix ---
-# if player doesn't have flash, don't allow hexflash
 
 # -------------- Global Variables --------------
 mode = None
@@ -161,9 +160,16 @@ def select_sums():
 
 #select random runes
 def select_runes():
+    global general_runes1
+    global general_runes2
     select_trees()
     select_keystone()
     select_general_runes()
+    if "Flash" not in sums:
+        while "Hextech Flashtraption" in general_runes1 or "Hextech Flashtraption" in general_runes2:
+            general_runes1 = []
+            general_runes2 = []
+            select_general_runes()
     return
 
 
