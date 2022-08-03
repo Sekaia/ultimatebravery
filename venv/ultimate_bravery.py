@@ -7,6 +7,8 @@ import champions as champs
 import summoner_spells
 import summoner_spells as sums
 
+# --- fix ---
+# if player doesn't have flash, don't allow hexflash
 
 # -------------- Global Variables --------------
 mode = None
