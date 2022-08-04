@@ -8,7 +8,8 @@ import summoner_spells
 import summoner_spells as sums
 
 # --- fix ---
-
+# TODO: only give 2 options in secondary rune tree rather than 3
+# TODO: Add a rules page
 # -------------- Global Variables --------------
 mode = None
 role = None
@@ -41,20 +42,24 @@ def ultimate_bravery():
     general_runes1.insert(0, keystone)
     select_items()
 
+    gen_runes1 = ", ".join(general_runes1)
+    gen_runes2 = ", ".join(general_runes2)
+    fin_items = ", ".join(finish_items)
+    start_items = ", ".join(starting_items)
 
     if mode == "sr":
         print("\nChampion: " + champ)
         print("\nSpells:   " + sums[0] + " and " + sums[1])
-        print("\nRunes:    " + str(general_runes1))
-        print("          " + str(general_runes2))
-        print("\nStarting Items: " + str(starting_items))
-        print("\nFull Build:     " + str(finish_items))
+        print("\nRunes:    " + gen_runes1)
+        print("          " + gen_runes2)
+        print("\nStarting Items: " + start_items)
+        print("\nFull Build:     " + fin_items)
     elif mode == "aram":
         print("\nSpells: " + sums[0] + " and " + sums[1])
-        print("\nRunes:  " + str(general_runes1))
-        print("        " + str(general_runes2))
-        print("\nStarting Items: " + str(starting_items))
-        print("\nFull Build:     " + str(finish_items))
+        print("\nRunes:  " + gen_runes1)
+        print("        " + gen_runes2)
+        print("\nStarting Items: " + start_items)
+        print("\nFull Build:     " + fin_items)
 
 
 #get game mode
